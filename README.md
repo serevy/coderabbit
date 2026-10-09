@@ -1,5 +1,7 @@
 # Shared CodeRabbit review policy
 
+[![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/serevy/coderabbit?utm_source=oss&utm_medium=github&utm_campaign=serevy%2Fcoderabbit&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)](https://coderabbit.ai)
+
 個人所有のGitHubリポジトリ間で共通化する、**公開可能なCodeRabbitレビュー規約**の実験的な置き場です。
 
 > Status: **experimental**. CodeRabbit公式の中央設定はGitHub **Organization**向けとして説明されています。
