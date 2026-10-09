@@ -1,0 +1,45 @@
+# Shared CodeRabbit defaults for public repositories.
+# Central configuration resolution is pending verification for personal GitHub owners.
+inheritance: true
+language: "ja-JP"
+
+tone_instructions: >-
+  レビューでは観測できる事実、問題の発生条件、具体的な影響、最小限の修正方向を
+  できるだけ分けて簡潔に説明してください。推測を事実として断定せず、
+  情報が足りない場合は質問として示してください。レビュー対象の既存方針を尊重してください。
+
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  high_level_summary_instructions: >-
+    変更の目的、主な影響、検証すべき具体的なリスクを優先し、
+    重要性の低い実装詳細や主観的な書式の好みを列挙しないでください。
+  poem: false
+  in_progress_fortune: false
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+  path_instructions:
+    - path: "**/*"
+      instructions: |
+        Evidence-driven reviewを優先してください。
+        - 実際の不具合、セキュリティ、互換性、退行、プライバシー、契約違反を優先する。
+        - 再現条件と影響が不明な推測や、style-onlyの指摘を重大な問題として扱わない。
+        - 同じ根本原因による重複コメントを避ける。
+        - 実害が示されない抽象化や大規模リファクタリングを要求しない。
+        - 採用済みの設計判断やリポジトリ固有の制約を尊重する。
+        - 原因が確定できない場合は確認質問として扱う。
+
+    - path: ".github/workflows/**"
+      instructions: |
+        CIの変更では、最小権限、secretの扱い、再現性、既存の検証範囲、
+        失敗時の証跡、不要な実行・課金の増加を具体的に確認してください。
+        セキュリティや正確性を下げるコスト削減は推奨しないでください。
+
+knowledge_base:
+  learnings:
+    # Keep automatic learnings repository-local; shared review standards live here.
+    scope: "local"
